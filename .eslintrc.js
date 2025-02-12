@@ -16,6 +16,7 @@ module.exports = {
     'no-process-exit': 'off',
     'object-shorthand': 'off',
     'class-methods-use-this': 'off',
+    'node/no-unsupported-features/es-syntax': 'off',
   },
   plugins: ['prettier'],
   extends: ['airbnb', 'prettier', 'plugin:node/recommended'],
