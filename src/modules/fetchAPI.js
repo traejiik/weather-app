@@ -39,4 +39,6 @@ async function coordToCity(position) {
   }
 }
 
-export { coordToCity, getLocData };
+export default function retrieve(position) {
+  coordToCity(position);
+}
