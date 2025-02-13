@@ -1,4 +1,5 @@
 import { getLocData, coordToCity } from './fetchAPI';
+import alertBox from './alertBox';
 
 function useLoc() {
   const geoBtn = document.querySelector('.mn-geoLoc');
@@ -12,11 +13,11 @@ function searchCity() {
   const inp = document.querySelector('#city-search');
   const searchBtn = document.querySelector('.mn-searchLoc');
 
-  inp.addEventListener('keydown', (e) => {
+  inp.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       if (inp.value === '') {
-        alert('Enter a city');
+        alertBox('please enter a city');
       } else {
         getLocData(inp.value);
       }
@@ -24,7 +25,7 @@ function searchCity() {
   });
   searchBtn.addEventListener('click', () => {
     if (inp.value === '') {
-      alert('Enter a city');
+      alertBox('please enter a city');
     } else {
       getLocData(inp.value);
     }
