@@ -1,32 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-    --main-bg-colour: rgb(15, 23, 43);
-    --sec-bg-colour: rgb(30, 41, 57);
-    --title-font: "Outfit", Arial, sans-serif;
-    --content-font: "Roboto", Helvetica, sans-serif;
+  --main-bg-colour: rgb(2, 6, 24);
+  --sec-bg-colour: rgb(30, 41, 57);
+  --title-font: 'Outfit', Arial, sans-serif;
+  --content-font: 'Roboto', Helvetica, sans-serif;
+  --title-colour: rgb(255, 255, 255);
+  --content-colour: rgb(144, 161, 185);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    position: relative;
+  height: 100vh;
+  position: relative;
+  font-family: var(--content-font);
+  color: var(--content-colour);
 }
 
 .container {
-    width: 100%;
-    height: 100%;
-    background-color: var(--main-bg-colour);
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-colour);
+  display: flex;
+  justify-content: center;
 }
 
 /* init app load */
 .page-intro {
-    height: 80%;
-    width: 80%;
-    background-color: var(--sec-bg-colour);
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+  border-radius: 0.5rem;
+  background-color: var(--sec-bg-colour);
+}
+
+.main-text,
+.main-subctn {
+  width: 100%;
+  height: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-text {
+  justify-content: center;
+}
+
+.main-subctn {
+  gap: 4%;
+}
+
+.mn-title {
+  font-family: var(--title-font);
+  color: var(--title-colour);
+  font-size: 8rem;
+}
+
+.mn-desc {
+  text-transform: capitalize;
 }
