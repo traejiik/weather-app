@@ -2,7 +2,9 @@
 
 :root {
   --main-bg-colour: rgb(2, 6, 24);
+  --main-bg-colourT: rgba(2, 6, 24, 0.5);
   --sec-bg-colour: rgb(30, 41, 57);
+  --sec-bg-colourT: rgba(30, 41, 57, 0.5);
   --title-font: 'Outfit', Arial, sans-serif;
   --content-font: 'Roboto', Helvetica, sans-serif;
   --title-colour: rgb(255, 255, 255);
@@ -30,6 +32,54 @@ body {
   background-color: var(--main-bg-colour);
   display: flex;
   justify-content: center;
+}
+
+/* alert box */
+.customAlert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--main-bg-colourT);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  display: none;
+  align-items: center;
+  z-index: 9999;
+}
+
+.active {
+  display: flex;
+}
+
+.alert-box {
+  background: var(--sec-bg-colour);
+  padding: 1.3rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 24px var(--main-bg-colour);
+  text-align: center;
+  max-width: 80%;
+  width: 20%;
+}
+
+.alert-box p {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin: 0 0 1.2rem;
+}
+
+.alert-box button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--main-colour);
+  color: var(--title-colour);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.alert-box button:hover {
+  background: var(--sec-colour);
 }
 
 /* init app load */
