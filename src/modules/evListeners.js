@@ -1,27 +1,34 @@
-import retrieveData from './fetchAPI';
+import { getLocData, coordToCity } from './fetchAPI';
 
 function useLoc() {
   const geoBtn = document.querySelector('.mn-geoLoc');
 
   geoBtn.addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition(retrieveData);
+    navigator.geolocation.getCurrentPosition(coordToCity);
   });
 }
 
-// function searchCity() {
-//   const inp = document.querySelector('#city-search');
-//   const searchBtn = document.querySelector('.mn-searchLoc');
+function searchCity() {
+  const inp = document.querySelector('#city-search');
+  const searchBtn = document.querySelector('.mn-searchLoc');
 
-//   inp.addEventListener('keypress', (e) => {
-//     if (e.key === 'Enter') {
-//       if (inp.value === '') {
-//         alert('Enter a city');
-//       } else {
-//         getLocData(inp.value);
-//       }
-//     }
-//   });
-//   searchBtn.addEventListener('click');
-// }
+  inp.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (inp.value === '') {
+        alert('Enter a city');
+      } else {
+        getLocData(inp.value);
+      }
+    }
+  });
+  searchBtn.addEventListener('click', () => {
+    if (inp.value === '') {
+      alert('Enter a city');
+    } else {
+      getLocData(inp.value);
+    }
+  });
+}
 
-export { useLoc };
+export { useLoc, searchCity };

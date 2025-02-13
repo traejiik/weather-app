@@ -11,7 +11,7 @@ async function getLocData(location) {
   }
 }
 
-export default async function coordToCity(position) {
+async function coordToCity(position) {
   console.log(position);
   const { latitude, longitude } = position.coords;
   const apiKey = '436c27761b114d85bf78a57ce2eef1dd';
@@ -38,3 +38,5 @@ export default async function coordToCity(position) {
     console.error('Error fetching location data:', error);
   }
 }
+
+export { getLocData, coordToCity };
