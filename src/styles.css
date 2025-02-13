@@ -7,6 +7,8 @@
   --content-font: 'Roboto', Helvetica, sans-serif;
   --title-colour: rgb(255, 255, 255);
   --content-colour: rgb(144, 161, 185);
+  --main-colour: rgb(0, 146, 184);
+  --sec-colour: rgb(0, 150, 137);
 }
 
 * {
@@ -57,15 +59,74 @@ body {
 }
 
 .main-subctn {
-  gap: 4%;
+  gap: 10%;
 }
 
 .mn-title {
   font-family: var(--title-font);
-  color: var(--title-colour);
   font-size: 8rem;
+
+  background-image: linear-gradient(
+    to right,
+    var(--main-colour),
+    var(--sec-colour)
+  );
+  background-repeat: repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 .mn-desc {
   text-transform: capitalize;
+}
+
+#city-search {
+  width: 90%;
+  height: 25%;
+  font-size: 150%;
+  padding-left: 1%;
+  border-radius: 0.6rem;
+  border: 1px solid var(--sec-bg-colour);
+}
+
+.mn-btn-ctn {
+  display: flex;
+  gap: 15%;
+}
+
+.mn-btn-ctn button {
+  width: 15rem;
+  height: 4rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: var(--title-font);
+}
+
+.mn-geoLoc {
+  background: linear-gradient(to right, var(--main-colour), var(--sec-colour));
+  color: var(--title-colour);
+  border: 2px solid var(--main-colour);
+}
+
+.mn-searchLoc {
+  background-color: var(--sec-bg-colour);
+  border: 2px solid var(--sec-colour);
+  color: var(--sec-colour);
+}
+
+.mn-geoLoc:hover {
+  box-shadow: inset 0px 0px 24px var(--title-colour);
+}
+
+.mn-searchLoc:hover {
+  box-shadow: inset 0px 0px 24px var(--sec-colour);
+}
+
+.mn-btn-ctn button:active {
+  filter: brightness(80%);
 }
