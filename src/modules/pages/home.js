@@ -9,8 +9,10 @@ export default function initPage() {
   textbox.classList.add('main-text');
   const appTitle = document.createElement('h1');
   appTitle.classList.add('mn-title');
+  appTitle.textContent = 'Wezaria';
   const appDesc = document.createElement('p');
   appDesc.classList.add('mn-desc');
+  appDesc.textContent = 'the floating weather city';
 
   const elCtn = document.createElement('div');
   elCtn.classList.add('main-subctn');
@@ -22,8 +24,10 @@ export default function initPage() {
   btnCtn.classList.add('mn-btn-ctn');
   const myLoc = document.createElement('button');
   myLoc.classList.add('mn-geoLoc');
+  myLoc.textContent = 'get my location';
   const customLoc = document.createElement('button');
   customLoc.classList.add('mn-searchLoc');
+  customLoc.textContent = 'search';
 
   btnCtn.appendChild(myLoc);
   btnCtn.appendChild(customLoc);
