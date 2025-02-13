@@ -65,21 +65,18 @@ body {
 .mn-title {
   font-family: var(--title-font);
   font-size: 8rem;
-
   background-image: linear-gradient(
     to right,
     var(--main-colour),
     var(--sec-colour)
   );
   background-repeat: repeat;
-
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
 
-.mn-desc {
+.desc-p {
   text-transform: capitalize;
 }
 
@@ -93,12 +90,14 @@ body {
 }
 
 .mn-btn-ctn {
+  width: 100%;
+  justify-content: center;
   display: flex;
-  gap: 15%;
+  gap: 5%;
 }
 
 .mn-btn-ctn button {
-  width: 15rem;
+  width: 25%;
   height: 4rem;
   font-size: 1rem;
   border-radius: 2rem;
@@ -120,7 +119,7 @@ body {
 }
 
 .mn-geoLoc:hover {
-  box-shadow: inset 0px 0px 24px var(--title-colour);
+  box-shadow: inset 0px 0px 24px var(--sec-bg-colour);
 }
 
 .mn-searchLoc:hover {
