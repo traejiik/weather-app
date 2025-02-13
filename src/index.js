@@ -1,4 +1,11 @@
 import './styles.css';
-import getWeatherData from './modules/fetchAPI';
+import initPage from './modules/pages/home';
+import { useLoc, searchCity } from './modules/evListeners';
 
-getWeatherData();
+function initLoad() {
+  initPage();
+  useLoc();
+  searchCity();
+}
+
+initLoad();
