@@ -109,7 +109,11 @@ export default function dataView() {
   const todayBd = document.createElement('div');
   todayBd.classList.add('bd-todaydetails');
 
-  for (let i = 1; i < 9; i++) {
+  const tdTitle = document.createElement('p');
+  tdTitle.classList.add('td-title');
+  tdTitle.textContent = "today's details";
+
+  for (let i = 1; i < 10; i++) {
     const tdInfo = document.createElement('div');
     tdInfo.classList.add(`td-info${i}`);
 
@@ -144,6 +148,10 @@ export default function dataView() {
 
   const days = document.createElement('div');
   days.classList.add('bd-daysForecast');
+  const dfTitle = document.createElement('p');
+  dfTitle.classList.add('df-title');
+  dfTitle.textContent = 'weekly forecast';
+
   for (let i = 1; i < 8; i++) {
     const dfInfo = document.createElement('div');
     dfInfo.classList.add(`df-info${i}`);
@@ -198,6 +206,8 @@ export default function dataView() {
   searchBar.appendChild(sbGeo);
 
   searchCtn.appendChild(searchBar);
+  todayBd.appendChild(tdTitle);
+  days.appendChild(dfTitle);
 
   breakdown.appendChild(searchCtn);
   breakdown.appendChild(todayBd);
