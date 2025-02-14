@@ -186,23 +186,39 @@ body {
   box-shadow: inset 0px 0px 24px var(--sec-colour);
 }
 
-.mn-btn-ctn button:active {
+button:active {
   filter: brightness(80%);
 }
 
 /* data view page */
+/* header */
 .header {
   height: 6%;
   width: 100%;
   padding: 0.5%;
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid var(--sec-bg-colour);
+}
+
+.hd-logo {
+  font-family: var(--title-font);
+  background-image: linear-gradient(
+    to right,
+    var(--main-colour),
+    var(--sec-colour)
+  );
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 .hd-btnctn {
   height: 95%;
   width: 15%;
   display: flex;
+  border-radius: 2rem;
   background-color: var(--sec-bg-colour);
 }
 
@@ -210,6 +226,90 @@ body {
 .fahrenheit {
   width: 50%;
   display: flex;
+  border-radius: 2rem;
   justify-content: center;
   align-items: center;
+}
+
+.active {
+  background: linear-gradient(to right, var(--main-colour), var(--sec-colour));
+  color: var(--title-colour);
+}
+
+/* display container */
+.dp-container {
+  height: 94%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.dp-summary {
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+
+.dp-breakdown {
+  background-color: var(--sec-bg-colour);
+  padding: 1% 0 0 1%;
+  display: grid;
+  grid-template-rows: 0.5fr 5fr 4fr;
+}
+
+.bd-searchCtn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sc-searchBar {
+  display: flex;
+  height: 95%;
+  width: 70%;
+  border-radius: 0.6rem;
+  padding: 0.5%;
+  background-color: var(--main-bg-colour);
+  border: 2px solid var(--main-bg-colour);
+}
+
+.sc-searchBar:focus-within {
+  border: 2px solid var(--main-colour);
+  transition: 0.2s ease-in;
+}
+
+#sb-search {
+  height: 100%;
+  flex: 7;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: var(--main-bg-colour);
+  outline: none;
+  color: var(--title-colour);
+  padding: 0 0 0 1%;
+}
+
+.sc-searchBar button {
+  flex: 1;
+  border-radius: 0.6rem;
+}
+
+.sb-searchBtn {
+  border: 2px solid var(--sec-colour);
+  background-color: var(--main-bg-colour);
+  color: var(--sec-colour);
+}
+
+.sb-geoBtn {
+  border: 2px solid var(--sec-colour);
+  background: linear-gradient(to right, var(--sec-colour), var(--main-colour));
+  color: var(--title-colour);
+  margin: 0 0 0 1%;
+}
+
+.sb-geoBtn:hover {
+  box-shadow: inset 0px 0px 10px var(--main-bg-colour);
+}
+
+.sb-searchBtn:hover {
+  box-shadow: inset 0px 0px 10px var(--sec-colour);
 }
