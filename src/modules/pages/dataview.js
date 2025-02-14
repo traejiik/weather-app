@@ -10,13 +10,17 @@ export default function dataView() {
   logoCtn.classList.add('hd-logoctn');
   const logo = document.createElement('h1');
   logo.classList.add('hd-logo');
+  logo.textContent = 'Wezaria';
 
   const btnCtn = document.createElement('div');
   btnCtn.classList.add('hd-btnctn');
   const fBtn = document.createElement('div');
   fBtn.classList.add('fahrenheit');
+  fBtn.innerHTML = `&#176F`;
   const cBtn = document.createElement('div');
   cBtn.classList.add('celsius');
+  cBtn.classList.add('active');
+  cBtn.innerHTML = `&#176C`;
 
   // section
   const mainDisp = document.createElement('main');
@@ -94,11 +98,13 @@ export default function dataView() {
   const inpt = document.createElement('input');
   inpt.id = 'sb-search';
   inpt.type = 'text';
-  inpt.placeholder = 'search for location';
+  inpt.placeholder = 'search for location...';
   const sbSearch = document.createElement('button');
   sbSearch.classList.add('sb-searchBtn');
+  sbSearch.textContent = 'search';
   const sbGeo = document.createElement('button');
   sbGeo.classList.add('sb-geoBtn');
+  sbGeo.textContent = 'geo';
 
   const todayBd = document.createElement('div');
   todayBd.classList.add('bd-todaydetails');
