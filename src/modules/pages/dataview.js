@@ -1,3 +1,6 @@
+import feelSvg from '../../assets/icons/feelslike.svg';
+import chance from '../../assets/icons/precip-percent.svg';
+
 export default function dataView() {
   const container = document.querySelector('.container');
   container.innerHTML = '';
@@ -54,6 +57,7 @@ export default function dataView() {
   for (let i = 1; i < 2; i++) {
     const iconBox = document.createElement('div');
     iconBox.classList.add('fl-icon');
+    iconBox.innerHTML = feelSvg;
     const contentBox = document.createElement('div');
     contentBox.classList.add('fl-content');
 
@@ -74,12 +78,13 @@ export default function dataView() {
   for (let i = 1; i < 2; i++) {
     const iconBox = document.createElement('div');
     iconBox.classList.add('pp-icon');
+    iconBox.innerHTML = chance;
     const contentBox = document.createElement('div');
     contentBox.classList.add('pp-content');
 
     const cbTitle = document.createElement('p');
     cbTitle.classList.add('ct-Title');
-    cbTitle.textContent = 'chance of precipitation';
+    cbTitle.textContent = 'precipitation chance';
     const cbDetail = document.createElement('p');
     cbDetail.classList.add('ct-Detail');
 
