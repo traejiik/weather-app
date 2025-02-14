@@ -32,7 +32,7 @@ body {
   background-color: var(--main-bg-colour);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 /* alert box */
@@ -188,4 +188,28 @@ body {
 
 .mn-btn-ctn button:active {
   filter: brightness(80%);
+}
+
+/* data view page */
+.header {
+  height: 6%;
+  width: 100%;
+  padding: 0.5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hd-btnctn {
+  height: 95%;
+  width: 15%;
+  display: flex;
+  background-color: var(--sec-bg-colour);
+}
+
+.celsius,
+.fahrenheit {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
