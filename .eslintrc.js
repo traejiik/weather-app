@@ -17,6 +17,7 @@ module.exports = {
     'object-shorthand': 'off',
     'class-methods-use-this': 'off',
     'node/no-unsupported-features/es-syntax': 'off',
+    'no-plusplus': ['warn', { allowForLoopAfterthoughts: true }],
   },
   plugins: ['prettier'],
   extends: ['airbnb', 'prettier', 'plugin:node/recommended'],
