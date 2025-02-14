@@ -1,6 +1,10 @@
+import getDate from './getDate';
+
 async function getLocData(location) {
+  const today = getDate();
+  const week = getDate(8);
   const apiKey = 'BT5LNKF4MUWA6HN47Q7UYCXUN';
-  const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`;
+  const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${today}/${week}?key=${apiKey}&include=days&elements=conditions,datetime,visibility,description,feelslike,humidity,uvindex,windspeed,precip,precipprob,feelslikemax,feelslikemin,icon,sunrise,sunset,tempmax,tempmin,temp&unitGroup=metric&iconSet=icons2`;
 
   try {
     const response = await fetch(apiUrl, { mode: 'cors' });
