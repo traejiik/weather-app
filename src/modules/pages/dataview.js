@@ -51,14 +51,15 @@ export default function dataView() {
   subInfo.classList.add('sum-subinfo');
   const feelLike = document.createElement('div');
   feelLike.classList.add('si-feelslike');
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 2; i++) {
     const iconBox = document.createElement('div');
-    iconBox.classList.add('pp-icon');
+    iconBox.classList.add('fl-icon');
     const contentBox = document.createElement('div');
-    contentBox.classList.add('pp-content');
+    contentBox.classList.add('fl-content');
 
     const cbTitle = document.createElement('p');
     cbTitle.classList.add('ct-Title');
+    cbTitle.textContent = 'feels like';
     const cbDetail = document.createElement('p');
     cbDetail.classList.add('ct-Detail');
 
@@ -70,7 +71,7 @@ export default function dataView() {
   }
   const precip = document.createElement('div');
   precip.classList.add('si-precprob');
-  for (let i = 1; i < 4; i++) {
+  for (let i = 1; i < 2; i++) {
     const iconBox = document.createElement('div');
     iconBox.classList.add('pp-icon');
     const contentBox = document.createElement('div');
@@ -78,6 +79,7 @@ export default function dataView() {
 
     const cbTitle = document.createElement('p');
     cbTitle.classList.add('ct-Title');
+    cbTitle.textContent = 'chance of precipitation';
     const cbDetail = document.createElement('p');
     cbDetail.classList.add('ct-Detail');
 
