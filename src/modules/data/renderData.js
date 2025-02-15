@@ -69,7 +69,7 @@ export default function renderData(today, forecast) {
   const humidDetail = document
     .getElementById('td-in4')
     .querySelector('.td-subDetail');
-  humidDetail.textContent = `${today.humid}%`;
+  humidDetail.textContent = `${today.humidity}%`;
 
   const visibTitle = document
     .getElementById('td-in5')
