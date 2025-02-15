@@ -1,11 +1,10 @@
 import './styles.css';
 import initPage from './modules/pages/home';
-import { useLoc, searchCity } from './modules/evListeners';
+import { homeListeners } from './modules/evListeners';
 
 function initLoad() {
   initPage();
-  useLoc();
-  searchCity();
+  homeListeners();
 }
 
 initLoad();
