@@ -417,7 +417,7 @@ button:active {
   grid-row: 1 / 2;
 }
 
-.td-info1 {
+#td-in1 {
   grid-column: 1 / 5;
   grid-row: 2 / 3;
 }
