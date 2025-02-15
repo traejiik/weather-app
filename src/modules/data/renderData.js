@@ -1,4 +1,7 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
 import dataView from '../pages/dataview';
+import { dateFormatted, getDay } from './convertDate';
 // import { dataViewListeners } from '../evListeners';
 
 function tdIcons(fileName) {
@@ -12,6 +15,46 @@ function tdIcons(fileName) {
     return null;
   }
 }
+
+function weatherIcon(icon) {
+  try {
+    const svgContent = require(
+      `../../assets/icons/WeatherIcons/${icon}.svg`,
+    ).default;
+    return svgContent;
+  } catch (error) {
+    console.error('Failed to load SVG:', error);
+    return null;
+  }
+}
+
+function weeklyInfo(data) {
+  // data.pop();
+  data.forEach((element, index) => {
+    const foreDay = document
+      .getElementById(`df-in${index + 1}`)
+      .querySelector('.df-subDay');
+    foreDay.textContent = getDay(element.date);
+    const foreDate = document
+      .getElementById(`df-in${index + 1}`)
+      .querySelector('.df-subDate');
+    foreDate.textContent = dateFormatted(element.date);
+    const foreIcon = document
+      .getElementById(`df-in${index + 1}`)
+      .querySelector('.df-subIcon');
+    foreIcon.innerHTML = weatherIcon(element.icon);
+    const foreHi = document
+      .getElementById(`df-in${index + 1}`)
+      .querySelector('.dt-hi');
+    foreHi.textContent = `${element.maxTemp} °C /`;
+    const foreLo = document
+      .getElementById(`df-in${index + 1}`)
+      .querySelector('.dt-lo');
+    foreLo.textContent = ` ${element.minTemp} °C`;
+    console.log(`${index} done`);
+  });
+}
+
 export default function renderData(today, forecast) {
   dataView();
   // dataViewListeners();
@@ -22,13 +65,13 @@ export default function renderData(today, forecast) {
   const locat = document.querySelector('.ld-loc');
   locat.textContent = today.location;
   const date = document.querySelector('.ld-date');
-  date.textContent = today.date;
+  date.textContent = dateFormatted(today.date);
 
   const summary = document.querySelector('.dp-summary');
   summary.style.backgroundImage = 'url()';
 
   const icon = document.querySelector('.mf-icon');
-  icon.innerHTML = '';
+  icon.innerHTML = weatherIcon(today.icon);
   const temp = document.querySelector('.mf-temp');
   temp.textContent = `${today.temp} °C`;
   const cond = document.querySelector('.mf-cond');
@@ -148,4 +191,5 @@ export default function renderData(today, forecast) {
   windDetail.textContent = `${today.windSpeed} km/h`;
 
   // week's forecast
+  weeklyInfo(forecast);
 }
