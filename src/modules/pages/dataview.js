@@ -126,7 +126,7 @@ export default function dataView() {
     tdInfo.id = `td-in${i}`;
 
     if (i === 1) {
-      const tdSubDetail = document.createElement('div');
+      const tdSubDetail = document.createElement('p');
       tdSubDetail.classList.add('td-subDetail');
 
       tdInfo.appendChild(tdSubDetail);
@@ -135,7 +135,7 @@ export default function dataView() {
       tdSubTitle.classList.add('td-subTitle');
       const tdSubIcon = document.createElement('div');
       tdSubIcon.classList.add('td-subIcon');
-      const tdSubDetail = document.createElement('div');
+      const tdSubDetail = document.createElement('p');
       tdSubDetail.classList.add('td-subDetail');
 
       tdInfo.appendChild(tdSubTitle);
@@ -176,7 +176,7 @@ export default function dataView() {
     dfSubTitle.classList.add('df-subTitle');
     const dfSubIcon = document.createElement('div');
     dfSubIcon.classList.add('df-subIcon');
-    const dfSubDetail = document.createElement('div');
+    const dfSubDetail = document.createElement('p');
     dfSubDetail.classList.add('df-subDetail');
 
     const spanHi = document.createElement('span');
