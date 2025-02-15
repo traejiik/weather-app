@@ -308,6 +308,7 @@ button:active {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
+  align-items: center;
   gap: 3%;
 }
 
@@ -315,6 +316,8 @@ button:active {
 .si-precprob {
   display: flex;
   gap: 5%;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -332,6 +335,9 @@ button:active {
 
 .pp-icon,
 .fl-icon {
+  display: flex;
+  align-items: center;
+  justify-content: end;
 height: 70%;
 width: 50%;
 }
@@ -345,6 +351,10 @@ width: 50%;
 
 .pp-content,
 .fl-content {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
 height: 70%;
 width: 50%;
 }
