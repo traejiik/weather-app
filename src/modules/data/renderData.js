@@ -1,6 +1,16 @@
 import dataView from '../pages/dataview';
 // import { dataViewListeners } from '../evListeners';
 
+function tdIcons(fileName) {
+  try {
+    const svgContent = import(`../../assets/icons/td-icons/${fileName}.svg`)
+      .default;
+    return svgContent;
+  } catch (error) {
+    console.error('Failed to load SVG:', error);
+    return null;
+  }
+}
 export default function renderData(today, forecast) {
   dataView();
   // dataViewListeners();
@@ -39,7 +49,7 @@ export default function renderData(today, forecast) {
   const maxTempIcon = document
     .getElementById('td-in2')
     .querySelector('.td-subIcon');
-  maxTempIcon.innerHTML = '';
+  maxTempIcon.innerHTML = tdIcons('maxTemp');
   const maxTempDetail = document
     .getElementById('td-in2')
     .querySelector('.td-subDetail');
@@ -52,7 +62,7 @@ export default function renderData(today, forecast) {
   const minTempIcon = document
     .getElementById('td-in3')
     .querySelector('.td-subIcon');
-  minTempIcon.innerHTML = '';
+  minTempIcon.innerHTML = tdIcons('minTemp');
   const minTempDetail = document
     .getElementById('td-in3')
     .querySelector('.td-subDetail');
@@ -65,7 +75,7 @@ export default function renderData(today, forecast) {
   const humidIcon = document
     .getElementById('td-in4')
     .querySelector('.td-subIcon');
-  humidIcon.innerHTML = '';
+  humidIcon.innerHTML = tdIcons('humidity');
   const humidDetail = document
     .getElementById('td-in4')
     .querySelector('.td-subDetail');
@@ -78,7 +88,7 @@ export default function renderData(today, forecast) {
   const visibIcon = document
     .getElementById('td-in5')
     .querySelector('.td-subIcon');
-  visibIcon.innerHTML = '';
+  visibIcon.innerHTML = tdIcons('visib');
   const visibDetail = document
     .getElementById('td-in5')
     .querySelector('.td-subDetail');
@@ -91,7 +101,7 @@ export default function renderData(today, forecast) {
   const sunriseIcon = document
     .getElementById('td-in6')
     .querySelector('.td-subIcon');
-  sunriseIcon.innerHTML = '';
+  sunriseIcon.innerHTML = tdIcons('sunrise');
   const sunriseDetail = document
     .getElementById('td-in6')
     .querySelector('.td-subDetail');
@@ -104,7 +114,7 @@ export default function renderData(today, forecast) {
   const sunsetIcon = document
     .getElementById('td-in7')
     .querySelector('.td-subIcon');
-  sunsetIcon.innerHTML = '';
+  sunsetIcon.innerHTML = tdIcons('sunset');
   const sunsetDetail = document
     .getElementById('td-in7')
     .querySelector('.td-subDetail');
@@ -117,7 +127,7 @@ export default function renderData(today, forecast) {
   const uvindexIcon = document
     .getElementById('td-in8')
     .querySelector('.td-subIcon');
-  uvindexIcon.innerHTML = '';
+  uvindexIcon.innerHTML = tdIcons('uvindex');
   const uvindexDetail = document
     .getElementById('td-in8')
     .querySelector('.td-subDetail');
@@ -130,7 +140,7 @@ export default function renderData(today, forecast) {
   const windIcon = document
     .getElementById('td-in9')
     .querySelector('.td-subIcon');
-  windIcon.innerHTML = '';
+  windIcon.innerHTML = tdIcons('windspeed');
   const windDetail = document
     .getElementById('td-in9')
     .querySelector('.td-subDetail');
