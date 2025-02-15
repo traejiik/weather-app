@@ -42,7 +42,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: var(--main-bg-colourT);
+  background-color: var(--main-bg-colourT);
   backdrop-filter: blur(8px);
   justify-content: center;
   display: none;
@@ -232,7 +232,7 @@ button:active {
   align-items: center;
 }
 
-.active {
+.active-btn {
   background: linear-gradient(to right, var(--main-colour), var(--sec-colour));
   box-shadow: 0px 0px 24px var(--main-bg-colour);
   color: var(--title-colour);
@@ -438,6 +438,15 @@ button:active {
   justify-items: center;
   background-color: var(--main-bg-colourT);
   border-radius: 1rem;
+}
+
+.td-subIcon {
+  align-self: center;
+}
+
+.td-subIcon svg {
+  height: 3rem;
+  fill: var(--main-colour);
 }
 
 .td-subDetail {
