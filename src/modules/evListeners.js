@@ -1,5 +1,5 @@
 import { getLocData, coordToCity } from './fetchAPI';
-import alertBox from './alertBox';
+import alertBox from './pages/alertBox';
 
 function useLoc() {
   const geoBtn = document.querySelector('.mn-geoLoc');

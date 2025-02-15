@@ -1,4 +1,6 @@
-import getDate from './getDate';
+import getDate from './data/getDate';
+import processData from './data/processData';
+import alertBox from './pages/alertBox';
 
 async function getLocData(location) {
   const today = getDate();
@@ -9,14 +11,13 @@ async function getLocData(location) {
   try {
     const response = await fetch(apiUrl, { mode: 'cors' });
     const weatherData = await response.json();
-    console.log(weatherData);
+    processData(weatherData);
   } catch (err) {
-    console.log(err);
+    alertBox(err);
   }
 }
 
 async function coordToCity(position) {
-  console.log(position);
   const { latitude, longitude } = position.coords;
   const apiKey = '436c27761b114d85bf78a57ce2eef1dd';
   const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
@@ -24,7 +25,6 @@ async function coordToCity(position) {
   try {
     const response = await fetch(apiUrl, { mode: 'cors' });
     const data = await response.json();
-    console.log(data);
 
     if (data.results.length > 0) {
       const location = data.results[0].components;
@@ -33,13 +33,12 @@ async function coordToCity(position) {
         location.town ||
         location.village ||
         'Unknown Location';
-      console.log(`City: ${city}`);
       getLocData(city);
     } else {
-      console.log('No location data found');
+      alertBox('No location data found');
     }
   } catch (error) {
-    console.error('Error fetching location data:', error);
+    alertBox('Error fetching location data:', error);
   }
 }
 
