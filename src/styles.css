@@ -338,8 +338,8 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: end;
-height: 70%;
-width: 50%;
+  height: 70%;
+  width: 50%;
 }
 
 .sum-subinfo svg {
@@ -355,8 +355,8 @@ width: 50%;
   align-items: start;
   justify-content: center;
   flex-direction: column;
-height: 70%;
-width: 50%;
+  height: 70%;
+  width: 50%;
 }
 
 /* breakdown */
