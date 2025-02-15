@@ -261,13 +261,13 @@ button:active {
 }
 
 .ld-loc {
-  font-size: 220%;
+  font-size: 210%;
   font-family: var(--title-font);
   color: var(--title-colour);
 }
 
 .ld-date {
-  color: var(--main-bg-colour);
+  color: var(--content-colour);
 }
 
 .sum-mainfo {
@@ -291,7 +291,8 @@ button:active {
 }
 
 .mf-cond {
-  color: var(--main-bg-colour);
+  color: var(--content-colour);
+  font-size: 130%;
 }
 
 .sum-subinfo {
@@ -422,7 +423,7 @@ button:active {
   grid-row: 2 / 3;
 }
 
-.bd-todaydetails > div {
+.td-info {
   background-color: var(--main-bg-colourT);
   border-radius: 1rem;
 }
@@ -434,7 +435,7 @@ button:active {
   grid-template-columns: repeat(7, 1fr);
 }
 
-.bd-daysForecast > div {
+.df-info {
   background-color: var(--main-bg-colourT);
   border-radius: 1rem;
 }
