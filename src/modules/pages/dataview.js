@@ -125,16 +125,23 @@ export default function dataView() {
     tdInfo.classList.add('td-info');
     tdInfo.id = `td-in${i}`;
 
-    const tdSubTitle = document.createElement('h4');
-    tdSubTitle.classList.add('td-subTitle');
-    const tdSubIcon = document.createElement('div');
-    tdSubIcon.classList.add('td-subIcon');
-    const tdSubDetail = document.createElement('div');
-    tdSubDetail.classList.add('td-subDetail');
+    if (i === 1) {
+      const tdSubDetail = document.createElement('div');
+      tdSubDetail.classList.add('td-subDetail');
 
-    tdInfo.appendChild(tdSubTitle);
-    tdInfo.appendChild(tdSubIcon);
-    tdInfo.appendChild(tdSubDetail);
+      tdInfo.appendChild(tdSubDetail);
+    } else {
+      const tdSubTitle = document.createElement('h4');
+      tdSubTitle.classList.add('td-subTitle');
+      const tdSubIcon = document.createElement('div');
+      tdSubIcon.classList.add('td-subIcon');
+      const tdSubDetail = document.createElement('div');
+      tdSubDetail.classList.add('td-subDetail');
+
+      tdInfo.appendChild(tdSubTitle);
+      tdInfo.appendChild(tdSubIcon);
+      tdInfo.appendChild(tdSubDetail);
+    }
 
     todayBd.appendChild(tdInfo);
   }
@@ -171,6 +178,14 @@ export default function dataView() {
     dfSubIcon.classList.add('df-subIcon');
     const dfSubDetail = document.createElement('div');
     dfSubDetail.classList.add('df-subDetail');
+
+    const spanHi = document.createElement('span');
+    spanHi.classList.add('dt-hi');
+    const spanLo = document.createElement('span');
+    spanLo.classList.add('dt-lo');
+
+    dfSubDetail.appendChild(spanHi);
+    dfSubDetail.appendChild(spanLo);
 
     dfInfo.appendChild(dfSubTitle);
     dfInfo.appendChild(dfSubIcon);
