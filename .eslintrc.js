@@ -18,6 +18,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'node/no-unsupported-features/es-syntax': 'off',
     'no-plusplus': ['warn', { allowForLoopAfterthoughts: true }],
+    'max-classes-per-file': ['error', 2],
   },
   plugins: ['prettier'],
   extends: ['airbnb', 'prettier', 'plugin:node/recommended'],
