@@ -1,4 +1,4 @@
-import renderData from '../renderData';
+import renderData from './renderData';
 
 class WeatherToday {
   constructor(
