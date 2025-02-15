@@ -35,7 +35,7 @@ class WeatherToday {
     this.sunset = sunset;
     this.uvIndex = uvindex;
     this.windSpeed = windspeed;
-    this.unit = 'C';
+    this.unit = 'metric';
   }
 
   convertToFahrenheit() {
@@ -43,7 +43,7 @@ class WeatherToday {
     this.maxTemp = this.maxTemp * 1.8 + 32;
     this.minTemp = this.minTemp * 1.8 + 32;
     this.feelsLike = this.feelsLike * 1.8 + 32;
-    this.unit = 'F';
+    this.unit = 'imperial';
   }
 
   convertToCelsius() {
@@ -51,7 +51,7 @@ class WeatherToday {
     this.maxTemp = (this.maxTemp - 32) / 1.8;
     this.minTemp = (this.minTemp - 32) / 1.8;
     this.feelsLike = (this.feelsLike - 32) / 1.8;
-    this.unit = 'C';
+    this.unit = 'metric';
   }
 }
 
@@ -61,19 +61,19 @@ class WeatherWeek {
     this.icon = icon;
     this.maxTemp = tempmax;
     this.minTemp = tempmin;
-    this.unit = 'C';
+    this.unit = 'metric';
   }
 
   convertToFahrenheit() {
     this.maxTemp = this.maxTemp * 1.8 + 32;
     this.minTemp = this.minTemp * 1.8 + 32;
-    this.unit = 'F';
+    this.unit = 'imperial';
   }
 
   convertToCelsius() {
     this.maxTemp = (this.maxTemp - 32) / 1.8;
     this.minTemp = (this.minTemp - 32) / 1.8;
-    this.unit = 'C';
+    this.unit = 'metric';
   }
 }
 
