@@ -22,7 +22,7 @@ export default function dataView() {
   fBtn.innerHTML = `&#176F`;
   const cBtn = document.createElement('div');
   cBtn.classList.add('celsius');
-  cBtn.classList.add('active');
+  cBtn.classList.add('active-btn');
   cBtn.innerHTML = `&#176C`;
 
   // section
