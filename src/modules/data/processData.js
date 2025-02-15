@@ -1,3 +1,5 @@
+import renderData from '../renderData';
+
 class WeatherToday {
   constructor(
     locat,
@@ -80,7 +82,6 @@ export default function processData(data) {
   const data0 = data.days[0];
   const dataList = data.days;
   dataList.splice(0, 1);
-  console.log(dataList);
 
   const today = new WeatherToday(
     data.resolvedAddress,
@@ -101,8 +102,6 @@ export default function processData(data) {
     data0.windspeed,
   );
 
-  console.log(today);
-
   dataList.forEach((item) => {
     const day = new WeatherWeek(
       item.datetime,
@@ -113,5 +112,5 @@ export default function processData(data) {
     weekForecast.push(day);
   });
 
-  console.log(weekForecast);
+  renderData(today, weekForecast);
 }
