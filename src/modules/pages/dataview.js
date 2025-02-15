@@ -122,7 +122,8 @@ export default function dataView() {
 
   for (let i = 1; i < 10; i++) {
     const tdInfo = document.createElement('div');
-    tdInfo.classList.add(`td-info${i}`);
+    tdInfo.classList.add('td-info');
+    tdInfo.id = `td-in${i}`;
 
     const tdSubTitle = document.createElement('h4');
     tdSubTitle.classList.add('td-subTitle');
@@ -161,7 +162,8 @@ export default function dataView() {
 
   for (let i = 1; i < 8; i++) {
     const dfInfo = document.createElement('div');
-    dfInfo.classList.add(`df-info${i}`);
+    dfInfo.classList.add('df-info');
+    dfInfo.id = `df-in${i}`;
 
     const dfSubTitle = document.createElement('h4');
     dfSubTitle.classList.add('df-subTitle');
