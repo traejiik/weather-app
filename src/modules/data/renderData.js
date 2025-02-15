@@ -9,9 +9,13 @@ export default function renderData(today, forecast) {
   const locat = document.querySelector('.ld-loc');
   locat.textContent = today.location;
   const date = document.querySelector('.ld-date');
-  date.textContent = today.datetime;
+  date.textContent = today.date;
+
+  const summary = document.querySelector('.dp-summary');
+  summary.style.backgroundImage = 'url()';
 
   const icon = document.querySelector('.mf-icon');
+  icon.innerHTML = '';
   const temp = document.querySelector('.mf-temp');
   temp.textContent = `${today.temp} °C`;
   const cond = document.querySelector('.mf-cond');
