@@ -2,6 +2,7 @@
 /* eslint-disable import/no-dynamic-require */
 import dataView from '../pages/dataview';
 import { dateFormatted, getDay } from './convertDate';
+import getImagePath from './images';
 // import { dataViewListeners } from '../evListeners';
 
 function tdIcons(fileName) {
@@ -29,7 +30,6 @@ function weatherIcon(icon) {
 }
 
 function weeklyInfo(data) {
-  // data.pop();
   data.forEach((element, index) => {
     const foreDay = document
       .getElementById(`df-in${index + 1}`)
@@ -68,7 +68,7 @@ export default function renderData(today, forecast) {
   date.textContent = dateFormatted(today.date);
 
   const summary = document.querySelector('.dp-summary');
-  summary.style.backgroundImage = 'url()';
+  summary.style.backgroundImage = `url(${getImagePath(today.icon)})`;
 
   const icon = document.querySelector('.mf-icon');
   icon.innerHTML = weatherIcon(today.icon);
