@@ -4,7 +4,7 @@ import alertBox from './pages/alertBox';
 
 async function getLocData(location) {
   const today = getDate();
-  const week = getDate(8);
+  const week = getDate(7);
   const apiKey = 'BT5LNKF4MUWA6HN47Q7UYCXUN';
   const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${today}/${week}?key=${apiKey}&include=days&elements=conditions,datetime,visibility,description,feelslike,humidity,uvindex,windspeed,precip,precipprob,feelslikemax,feelslikemin,icon,sunrise,sunset,tempmax,tempmin,temp&unitGroup=metric`;
 
