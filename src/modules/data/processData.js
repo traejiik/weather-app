@@ -38,19 +38,21 @@ class WeatherToday {
     this.unit = 'metric';
   }
 
-  convertToFahrenheit() {
+  convertToImperial() {
     this.temp = this.temp * 1.8 + 32;
     this.maxTemp = this.maxTemp * 1.8 + 32;
     this.minTemp = this.minTemp * 1.8 + 32;
     this.feelsLike = this.feelsLike * 1.8 + 32;
+    this.windSpeed *= 0.621371;
     this.unit = 'imperial';
   }
 
-  convertToCelsius() {
+  convertToMetric() {
     this.temp = (this.temp - 32) / 1.8;
     this.maxTemp = (this.maxTemp - 32) / 1.8;
     this.minTemp = (this.minTemp - 32) / 1.8;
     this.feelsLike = (this.feelsLike - 32) / 1.8;
+    this.windSpeed *= 1.609344;
     this.unit = 'metric';
   }
 }
@@ -64,13 +66,13 @@ class WeatherWeek {
     this.unit = 'metric';
   }
 
-  convertToFahrenheit() {
+  convertToImperial() {
     this.maxTemp = this.maxTemp * 1.8 + 32;
     this.minTemp = this.minTemp * 1.8 + 32;
     this.unit = 'imperial';
   }
 
-  convertToCelsius() {
+  convertToMetric() {
     this.maxTemp = (this.maxTemp - 32) / 1.8;
     this.minTemp = (this.minTemp - 32) / 1.8;
     this.unit = 'metric';
