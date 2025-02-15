@@ -146,21 +146,6 @@ export default function dataView() {
     todayBd.appendChild(tdInfo);
   }
 
-  /* 
-  info
-  tempmax
-  tempmin
-  uvindex
-  windspeed
-  visibility
-  humidity
-  sunrise/set */
-  /* 
-  title
-  icon
-  detail
-  */
-
   const days = document.createElement('div');
   days.classList.add('bd-daysForecast');
   const dfTitle = document.createElement('p');
@@ -173,7 +158,9 @@ export default function dataView() {
     dfInfo.id = `df-in${i}`;
 
     const dfSubTitle = document.createElement('h4');
-    dfSubTitle.classList.add('df-subTitle');
+    dfSubTitle.classList.add('df-subDay');
+    const dfSubDate = document.createElement('p');
+    dfSubDate.classList.add('df-subDate');
     const dfSubIcon = document.createElement('div');
     dfSubIcon.classList.add('df-subIcon');
     const dfSubDetail = document.createElement('p');
@@ -193,11 +180,6 @@ export default function dataView() {
 
     days.appendChild(dfInfo);
   }
-  /* 7 days
-  day
-  date
-  icon
-  hi/lo */
 
   // appending elements
   // header
