@@ -74,3 +74,44 @@ class WeatherWeek {
     this.unit = 'C';
   }
 }
+
+export default function processData(data) {
+  const weekForecast = [];
+  const data0 = data.days[0];
+  const dataList = data.days;
+  dataList.splice(0, 1);
+  console.log(dataList);
+
+  const today = new WeatherToday(
+    data.resolvedAddress,
+    data0.datetime,
+    data0.icon,
+    data0.temp,
+    data0.conditions,
+    data0.feelslike,
+    data0.precipprob,
+    data0.description,
+    data0.tempmax,
+    data0.tempmin,
+    data0.humidity,
+    data0.visibility,
+    data0.sunrise,
+    data0.sunset,
+    data0.uvindex,
+    data0.windspeed,
+  );
+
+  console.log(today);
+
+  dataList.forEach((item) => {
+    const day = new WeatherWeek(
+      item.datetime,
+      item.icon,
+      item.tempmax,
+      item.tempmin,
+    );
+    weekForecast.push(day);
+  });
+
+  console.log(weekForecast);
+}
