@@ -1,6 +1,7 @@
 import { getLocData, coordToCity } from './fetchAPI';
 import alertBox from './pages/alertBox';
 
+// home page listeners
 function useLoc() {
   const geoBtn = document.querySelector('.mn-geoLoc');
 
@@ -32,4 +33,14 @@ function searchCity() {
   });
 }
 
-export { useLoc, searchCity };
+// dataView listeners
+
+// helper functions
+function homeListeners() {
+  useLoc();
+  searchCity();
+}
+
+function dataViewListeners() {}
+
+export { homeListeners, dataViewListeners };
