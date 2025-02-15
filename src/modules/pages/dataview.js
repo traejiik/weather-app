@@ -175,6 +175,7 @@ export default function dataView() {
     dfSubDetail.appendChild(spanLo);
 
     dfInfo.appendChild(dfSubTitle);
+    dfInfo.appendChild(dfSubDate);
     dfInfo.appendChild(dfSubIcon);
     dfInfo.appendChild(dfSubDetail);
 
