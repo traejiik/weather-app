@@ -3,8 +3,9 @@ import dataView from '../pages/dataview';
 
 function tdIcons(fileName) {
   try {
-    const svgContent = import(`../../assets/icons/td-icons/${fileName}.svg`)
-      .default;
+    const svgContent = require(
+      `../../assets/icons/td-icons/${fileName}.svg`,
+    ).default;
     return svgContent;
   } catch (error) {
     console.error('Failed to load SVG:', error);
