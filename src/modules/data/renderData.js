@@ -2,6 +2,8 @@ import dataView from '../pages/dataview';
 
 export default function renderData(today, forecast) {
   dataView();
+  console.log(today);
+  console.log(forecast);
 
   // summary
   const locat = document.querySelector('.ld-loc');
@@ -16,9 +18,9 @@ export default function renderData(today, forecast) {
   cond.textContent = today.conditions;
 
   const feelVal = document.querySelector('.fl-content .ct-Detail');
-  feelVal.textContent = today.feelsLike;
+  feelVal.textContent = `${today.feelsLike} °C`;
   const precipVal = document.querySelector('.pp-content .ct-Detail');
-  precipVal.textContent = today.precipProb;
+  precipVal.textContent = `${today.precipProb}%`;
 
   // breakdown - today
 }
