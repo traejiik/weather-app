@@ -3,7 +3,6 @@
 import dataView from '../pages/dataview';
 import { dateFormatted, getDay } from './convertDate';
 import getImagePath from './images';
-import { dataViewListeners } from '../evListeners';
 
 function tdIcons(fileName) {
   try {
@@ -46,17 +45,16 @@ function weeklyInfo(data) {
     const foreHi = document
       .getElementById(`df-in${index + 1}`)
       .querySelector('.dt-hi');
-    foreHi.textContent = `${element.maxTemp} °C /`;
+    foreHi.textContent = `${element.maxTemp} ° /`;
     const foreLo = document
       .getElementById(`df-in${index + 1}`)
       .querySelector('.dt-lo');
-    foreLo.textContent = ` ${element.minTemp} °C`;
+    foreLo.textContent = ` ${element.minTemp} °`;
   });
 }
 
 export default function renderData(today, forecast) {
   dataView();
-  dataViewListeners(today, forecast);
   console.log(today);
   console.log(forecast);
 
@@ -72,12 +70,12 @@ export default function renderData(today, forecast) {
   const icon = document.querySelector('.mf-icon');
   icon.innerHTML = weatherIcon(today.icon);
   const temp = document.querySelector('.mf-temp');
-  temp.textContent = `${today.temp} °C`;
+  temp.textContent = `${today.temp} °`;
   const cond = document.querySelector('.mf-cond');
   cond.textContent = today.conditions;
 
   const feelVal = document.querySelector('.fl-content .ct-Detail');
-  feelVal.textContent = `${today.feelsLike} °C`;
+  feelVal.textContent = `${today.feelsLike} °`;
   const precipVal = document.querySelector('.pp-content .ct-Detail');
   precipVal.textContent = `${today.precipProb}%`;
 
@@ -96,7 +94,7 @@ export default function renderData(today, forecast) {
   const maxTempDetail = document
     .getElementById('td-in2')
     .querySelector('.td-subDetail');
-  maxTempDetail.textContent = `${today.maxTemp} °C`;
+  maxTempDetail.textContent = `${today.maxTemp} °`;
 
   const minTempTitle = document
     .getElementById('td-in3')
@@ -109,7 +107,7 @@ export default function renderData(today, forecast) {
   const minTempDetail = document
     .getElementById('td-in3')
     .querySelector('.td-subDetail');
-  minTempDetail.textContent = `${today.minTemp} °C`;
+  minTempDetail.textContent = `${today.minTemp} °`;
 
   const humidTitle = document
     .getElementById('td-in4')
@@ -135,7 +133,7 @@ export default function renderData(today, forecast) {
   const visibDetail = document
     .getElementById('td-in5')
     .querySelector('.td-subDetail');
-  visibDetail.textContent = `${today.visibility} km`;
+  visibDetail.textContent = `${today.visibility}`;
 
   const sunriseTitle = document
     .getElementById('td-in6')
@@ -187,7 +185,7 @@ export default function renderData(today, forecast) {
   const windDetail = document
     .getElementById('td-in9')
     .querySelector('.td-subDetail');
-  windDetail.textContent = `${today.windSpeed} km/h`;
+  windDetail.textContent = `${today.windSpeed}`;
 
   // week's forecast
   weeklyInfo(forecast);
