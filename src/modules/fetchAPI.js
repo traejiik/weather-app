@@ -1,5 +1,6 @@
 import getDate from './data/getDate';
 import processData from './data/processData';
+import { dataViewListeners } from './evListeners';
 import alertBox from './pages/alertBox';
 
 async function getLocData(location) {
@@ -11,7 +12,8 @@ async function getLocData(location) {
   try {
     const response = await fetch(apiUrl, { mode: 'cors' });
     const weatherData = await response.json();
-    processData(weatherData);
+    const processed = processData(weatherData);
+    dataViewListeners(processed);
   } catch (err) {
     alertBox(err);
   }
