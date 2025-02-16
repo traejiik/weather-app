@@ -115,4 +115,8 @@ export default function processData(data) {
   });
 
   renderData(today, weekForecast);
+  return {
+    today,
+    weekForecast,
+  };
 }
