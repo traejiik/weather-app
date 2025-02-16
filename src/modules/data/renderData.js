@@ -3,7 +3,7 @@
 import dataView from '../pages/dataview';
 import { dateFormatted, getDay } from './convertDate';
 import getImagePath from './images';
-// import { dataViewListeners } from '../evListeners';
+import { dataViewListeners } from '../evListeners';
 
 function tdIcons(fileName) {
   try {
@@ -51,13 +51,12 @@ function weeklyInfo(data) {
       .getElementById(`df-in${index + 1}`)
       .querySelector('.dt-lo');
     foreLo.textContent = ` ${element.minTemp} °C`;
-    console.log(`${index} done`);
   });
 }
 
 export default function renderData(today, forecast) {
   dataView();
-  // dataViewListeners();
+  dataViewListeners(today, forecast);
   console.log(today);
   console.log(forecast);
 
