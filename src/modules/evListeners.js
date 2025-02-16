@@ -66,7 +66,8 @@ function dataUseLoc() {
   });
 }
 
-function unitSwitch(today, forecast) {
+function unitSwitch(data) {
+  const { today, forecast } = data;
   const celsius = document.querySelector('.celsius');
   const fahrenheit = document.querySelector('.fahrenheit');
 
@@ -89,10 +90,10 @@ function homeListeners() {
   searchCity();
 }
 
-function dataViewListeners(today, forecast) {
+function dataViewListeners(data) {
   dataSearchCity();
   dataUseLoc();
-  unitSwitch(today, forecast);
+  unitSwitch(data);
 }
 
 export { homeListeners, dataViewListeners };
