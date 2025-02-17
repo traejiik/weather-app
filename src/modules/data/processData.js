@@ -44,6 +44,7 @@ class WeatherToday {
     this.minTemp = this.minTemp * 1.8 + 32;
     this.feelsLike = this.feelsLike * 1.8 + 32;
     this.windSpeed *= 0.621371;
+    this.visibility *= 1.609;
     this.unit = 'imperial';
   }
 
@@ -53,6 +54,7 @@ class WeatherToday {
     this.minTemp = (this.minTemp - 32) / 1.8;
     this.feelsLike = (this.feelsLike - 32) / 1.8;
     this.windSpeed *= 1.609344;
+    this.visibility /= 1.609;
     this.unit = 'metric';
   }
 }
