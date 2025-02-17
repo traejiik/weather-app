@@ -68,22 +68,34 @@ function dataUseLoc() {
 
 function unitSwitch(data) {
   const { today, weekForecast } = data;
-  const celsius = document.querySelector('.celsius');
-  const fahrenheit = document.querySelector('.fahrenheit');
+  const hdBtnCtn = document.querySelector('.hd-btnctn');
+  let activeUnit = 'celsius'; // Track the active unit
 
-  fahrenheit.addEventListener('click', () => {
-    celsius.classList.remove('active-btn');
-    fahrenheit.classList.add('active-btn');
+  function updateClasses() {
+    const celsius = document.querySelector('.celsius');
+    const fahrenheit = document.querySelector('.fahrenheit');
+
+    celsius.classList.toggle('active-btn', activeUnit === 'celsius');
+    fahrenheit.classList.toggle('active-btn', activeUnit === 'fahrenheit');
+  }
+
+  function handleUnitChange(unit) {
+    activeUnit = unit;
     const data1 = changeUnit(today, weekForecast);
+    // eslint-disable-next-line no-use-before-define
     dataViewListeners(data1);
+    updateClasses();
+  }
+
+  hdBtnCtn.addEventListener('click', (event) => {
+    if (event.target.classList.contains('celsius')) {
+      handleUnitChange('celsius');
+    } else if (event.target.classList.contains('fahrenheit')) {
+      handleUnitChange('fahrenheit');
+    }
   });
 
-  celsius.addEventListener('click', () => {
-    fahrenheit.classList.remove('active-btn');
-    celsius.classList.add('active-btn');
-    const data1 = changeUnit(today, weekForecast);
-    dataViewListeners(data1);
-  });
+  updateClasses();
 }
 
 // helper functions
