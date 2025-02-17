@@ -45,11 +45,11 @@ function weeklyInfo(data) {
     const foreHi = document
       .getElementById(`df-in${index + 1}`)
       .querySelector('.dt-hi');
-    foreHi.textContent = `${element.maxTemp} ° /`;
+    foreHi.textContent = `${element.maxTemp.toFixed(1)} ° /`;
     const foreLo = document
       .getElementById(`df-in${index + 1}`)
       .querySelector('.dt-lo');
-    foreLo.textContent = ` ${element.minTemp} °`;
+    foreLo.textContent = ` ${element.minTemp.toFixed(1)} °`;
   });
 }
 
@@ -70,12 +70,12 @@ export default function renderData(today, forecast) {
   const icon = document.querySelector('.mf-icon');
   icon.innerHTML = weatherIcon(today.icon);
   const temp = document.querySelector('.mf-temp');
-  temp.textContent = `${today.temp} °`;
+  temp.textContent = `${Math.round(today.temp * 10) / 10} °`;
   const cond = document.querySelector('.mf-cond');
   cond.textContent = today.conditions;
 
   const feelVal = document.querySelector('.fl-content .ct-Detail');
-  feelVal.textContent = `${today.feelsLike} °`;
+  feelVal.textContent = `${Math.round(today.feelsLike * 10) / 10} °`;
   const precipVal = document.querySelector('.pp-content .ct-Detail');
   precipVal.textContent = `${today.precipProb}%`;
 
@@ -94,7 +94,7 @@ export default function renderData(today, forecast) {
   const maxTempDetail = document
     .getElementById('td-in2')
     .querySelector('.td-subDetail');
-  maxTempDetail.textContent = `${today.maxTemp} °`;
+  maxTempDetail.textContent = `${today.maxTemp.toFixed(1)} °`;
 
   const minTempTitle = document
     .getElementById('td-in3')
@@ -107,7 +107,7 @@ export default function renderData(today, forecast) {
   const minTempDetail = document
     .getElementById('td-in3')
     .querySelector('.td-subDetail');
-  minTempDetail.textContent = `${today.minTemp} °`;
+  minTempDetail.textContent = `${today.minTemp.toFixed(1)} °`;
 
   const humidTitle = document
     .getElementById('td-in4')
@@ -133,7 +133,7 @@ export default function renderData(today, forecast) {
   const visibDetail = document
     .getElementById('td-in5')
     .querySelector('.td-subDetail');
-  visibDetail.textContent = `${today.visibility}`;
+  visibDetail.textContent = `${today.visibility.toFixed(1)}`;
 
   const sunriseTitle = document
     .getElementById('td-in6')
@@ -185,7 +185,7 @@ export default function renderData(today, forecast) {
   const windDetail = document
     .getElementById('td-in9')
     .querySelector('.td-subDetail');
-  windDetail.textContent = `${today.windSpeed}`;
+  windDetail.textContent = `${today.windSpeed.toFixed(1)}`;
 
   // week's forecast
   weeklyInfo(forecast);
