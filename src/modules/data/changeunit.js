@@ -1,13 +1,26 @@
-export default function changeUnit(today, forecast) {
+import renderData from './renderData';
+
+export default function changeUnit(today, weekForecast) {
   if (today.unit === 'metric') {
     today.convertToImperial();
-    forecast.forEach((item) => {
+    weekForecast.forEach((item) => {
       item.convertToImperial();
     });
-  } else {
+    renderData(today, weekForecast);
+    return {
+      today,
+      weekForecast,
+    };
+  }
+  if (today.unit === 'imperial') {
     today.convertToMetric();
-    forecast.forEach((item) => {
-      item.convertToMetricl();
+    weekForecast.forEach((item) => {
+      item.convertToMetric();
     });
+    renderData(today, weekForecast);
+    return {
+      today,
+      weekForecast,
+    };
   }
 }
