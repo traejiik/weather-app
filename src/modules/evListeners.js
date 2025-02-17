@@ -67,20 +67,22 @@ function dataUseLoc() {
 }
 
 function unitSwitch(data) {
-  const { today, forecast } = data;
+  const { today, weekForecast } = data;
   const celsius = document.querySelector('.celsius');
   const fahrenheit = document.querySelector('.fahrenheit');
-
-  celsius.addEventListener('click', () => {
-    fahrenheit.classList.remove('active-btn');
-    celsius.classList.add('active-btn');
-    changeUnit(today, forecast);
-  });
 
   fahrenheit.addEventListener('click', () => {
     celsius.classList.remove('active-btn');
     fahrenheit.classList.add('active-btn');
-    changeUnit(today, forecast);
+    const data1 = changeUnit(today, weekForecast);
+    dataViewListeners(data1);
+  });
+
+  celsius.addEventListener('click', () => {
+    fahrenheit.classList.remove('active-btn');
+    celsius.classList.add('active-btn');
+    const data1 = changeUnit(today, weekForecast);
+    dataViewListeners(data1);
   });
 }
 
